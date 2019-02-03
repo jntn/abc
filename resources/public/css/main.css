@@ -1,0 +1,110 @@
+@import url(theme.css);
+
+body {
+    background-color: var(--blue5);
+    font-family: system-ui, sans-serif;
+}
+
+.header {
+    padding: 0 16px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    color: var(--gray0);
+    border-bottom: 2px solid var(--blue6);
+    border-radius: 1px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.option {
+    padding: 5px;
+    color: var(--blue2)
+}
+
+.option:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.option--selected {
+    color: white;
+}
+
+.option--selected:hover {
+    cursor: default;
+}
+
+main {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emoji {
+    font-size: 120px;
+}
+
+.circle {
+    background-color: var(--blue6);
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter {
+    color: var(--pink0);
+    font-size: 140px;
+    display: inline-block;
+    font-weight: 800;
+}
+
+.letter__correct {
+    animation: scale .3s cubic-bezier(.71,.55,.62,1.57);
+}
+
+.letter__incorrect {
+    animation: shake .82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+  @keyframes scale {
+    from {
+        opacity: 0;
+        transform: scale(.9, .9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}

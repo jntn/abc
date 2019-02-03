@@ -1,0 +1,11 @@
+{:paths ["src" "test"]
+
+ :deps
+ {rum                         {:mvn/version "0.11.3"}
+  org.roman01la/citrus        {:mvn/version "3.2.1"}
+  secretary                   {:mvn/version "1.2.3"}
+  com.andrewmcveigh/cljs-time {:mvn/version "0.5.2"}
+  proto-repl                  {:mvn/version "0.3.1"}
+  devcards                    {:mvn/version "0.2.5"}
+  binaryage/devtools          {:mvn/version "0.9.10"}
+  thheller/shadow-cljs        {:mvn/version "2.6.4"}}}

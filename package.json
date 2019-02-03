@@ -1,0 +1,35 @@
+{
+  "name": "abc",
+  "version": "0.0.1",
+  "private": true,
+  "description": "learn abc!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jntn/abc.git"
+  },
+  "author": {
+    "name": "Jonatan Granqvist"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "shadow-cljs watch app;",
+    "devcards": "shadow-cljs watch devcards",
+    "release": "shadow-cljs release app;",
+    "repl": "shadow-cljs cljs-repl app",
+    "stop": "shadow-cljs stop",
+    "server": "shadow-cljs server;",
+    "clean": "rm -rf resources/public/js"
+  },
+  "dependencies": {
+    "create-react-class": "^15.6.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "showdown": "^1.8.6"
+  },
+  "devDependencies": {
+    "highlight.js": "^9.12.0",
+    "react-flip-move": "^3.0.1",
+    "react-highlight.js": "^1.0.7",
+    "shadow-cljs": "^2.3.36"
+  }
+}
