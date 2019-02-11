@@ -12,14 +12,19 @@
                 (citrus/dispatch! reconciler controller-name on-read))
       nil)))
 
+(defn timeout [reconciler controller-name effect]
+  (let [{:keys [delay on-timeout]} effect]
+    (js/setTimeout #(citrus/dispatch! reconciler controller-name on-timeout) delay)))
+
 (defonce reconciler
   (citrus/reconciler
    {:state
-    (atom {}) ;; application state
+    (atom {})
     :controllers
-    {:app db/control} ;; controllers
+    {:app db/control}
     :effect-handlers
-    {:local-storage local-storage}})) ;; effect handlers
+    {:local-storage local-storage
+     :timeout timeout}}))
 
 (defn keypress [e]
   (let [key (.fromCharCode js/String (.-keyCode e))]

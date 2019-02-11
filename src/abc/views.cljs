@@ -6,7 +6,11 @@
    [abc.db :as db]))
 
 (defn Emoji [emoji]
-  [:div {:class "circle"} [:span {:class "emoji"} emoji]])
+  [:.circle
+   [:.emoji emoji]])
+
+(defn Word [word]
+  [:.word word])
 
 (defn Letter [char state]
   [:span {:class ["letter"
@@ -16,19 +20,26 @@
                     nil)]} char])
 
 (rum/defc Main < rum/reactive [r]
-  (let [state (rum/react (db/state r))
-        letter-index (:current-letter state)
-        letter-list (:letter-list state)
-        letter (nth letter-list letter-index)
-        letter-info (get-in state [:letters letter])]
+  (let [letter-info (db/get-letter-info (db/state r))
+        state (:state (db/state r))]
     [:main {:key "main"}
-     (Emoji (get-in letter-info [:sv :emoji])) (Letter (:letter letter-info) :none)]))
+     (Emoji (:emoji letter-info))
+     (Word (:word letter-info))
+     (Letter (:char letter-info) state)]))
 
 (defn Header []
-  [:header {:class "header" :key "header"}
-   [:div {:class "header__inner"}
-    [:div {:class "logo"} "Emoji ABC"]
-    [:div [:span {:class "option" :key "word"} "ord"] [:span {:key "separator"} "/"] [:span {:class "option option--selected" :key "letter"} "bokstav"]]]])
+  [:header.header {:key "header"}
+   [:div.header__inner
+    [:div.logo "Emoji ABC"]
+    [:span.hidden
+     [:span
+      [:span.option {:key "word"} "ord"]
+      [:span {:key "separator"} "/"]
+      [:span.option.option--selected {:key "letter"} "bokstav"]]
+     [:span
+      [:span.option {:key "word"} "sv"]
+      [:span {:key "separator"} "/"]
+      [:span.option.option--selected {:key "letter"} "en"]]]]])
 
 (rum/defc App [r]
   [Fragment (Header) (Main r)])

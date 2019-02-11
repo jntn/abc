@@ -1,7 +1,7 @@
 @import url(theme.css);
 
 body {
-    background-color: var(--blue5);
+    background-color: var(--pink5);
     font-family: system-ui, sans-serif;
 }
 
@@ -12,10 +12,10 @@ body {
 .header__inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     padding: 16px 0;
     color: var(--gray0);
-    border-bottom: 2px solid var(--blue6);
+    border-bottom: 2px solid var(--pink6);
     border-radius: 1px;
 }
 
@@ -25,7 +25,7 @@ body {
 
 .option {
     padding: 5px;
-    color: var(--blue2)
+    color: var(--pink2)
 }
 
 .option:hover {
@@ -49,14 +49,20 @@ main {
 }
 
 .emoji {
-    font-size: 120px;
+    font-size: 80px;
+}
+
+.word {
+    color: white;
+    font-size: 30px;
+    margin-top: 15px;
 }
 
 .circle {
-    background-color: var(--blue6);
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+    background-color: var(--pink6);
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +70,7 @@ main {
 
 .letter {
     color: var(--pink0);
-    font-size: 140px;
+    font-size: 160px;
     display: inline-block;
     font-weight: 800;
 }
@@ -73,8 +79,12 @@ main {
     animation: scale .3s cubic-bezier(.71,.55,.62,1.57);
 }
 
+.hidden {
+    display: none;
+}
+
 .letter__incorrect {
-    animation: shake .82s cubic-bezier(.36,.07,.19,.97) both;
+    animation: shake .9s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;

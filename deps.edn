@@ -6,6 +6,6 @@
   secretary                   {:mvn/version "1.2.3"}
   com.andrewmcveigh/cljs-time {:mvn/version "0.5.2"}
   proto-repl                  {:mvn/version "0.3.1"}
-  devcards                    {:mvn/version "0.2.5"}
+  devcards                    {:mvn/version "0.2.6"}
   binaryage/devtools          {:mvn/version "0.9.10"}
-  thheller/shadow-cljs        {:mvn/version "2.6.4"}}}
+  thheller/shadow-cljs        {:mvn/version "2.7.24"}}}
