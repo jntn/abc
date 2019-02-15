@@ -1,0 +1,11 @@
+.lein-*
+.nrepl-*
+.idea
+*.iml
+target/
+node_modules/
+checkouts/
+.cpcache
+.shadow-cljs
+pom.xml
+yarn-error.log

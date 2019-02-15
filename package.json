@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "shadow-cljs watch app;",
     "devcards": "shadow-cljs watch devcards",
-    "release": "shadow-cljs release app;",
+    "release": "shadow-cljs release app",
     "repl": "shadow-cljs cljs-repl app",
     "stop": "shadow-cljs stop",
     "server": "shadow-cljs server;",
