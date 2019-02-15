@@ -1,6 +1,12 @@
-{:deps         true
-
- :nrepl        {:port 3333}
+{:nrepl        {:port 3333}
+ :source-paths ["src"]
+ :dependencies [[rum                         "0.11.3"]
+                [org.roman01la/citrus        "3.2.1"]
+                [secretary                   "1.2.3"]
+                [com.andrewmcveigh/cljs-time "0.5.2"]
+                [proto-repl                  "0.3.1"]
+                [devcards                    "0.2.6"]
+                [binaryage/devtools          "0.9.10"]]
 
  :builds
  {:app {:target :browser

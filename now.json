@@ -2,19 +2,13 @@
     "version": 2,
     "name": "abc",
     "alias": "abc.jntn.se",
-    "github": {
-        "enabled": "false"
-    },
     "builds": [
         {
-            "src": "resources/public/**/*",
-            "use": "@now/static"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/resources/public/$1"
+            "src": "./build.sh",
+            "use": "@now/static-build",
+            "config": {
+                "distDir": "./resources/public"
+            }
         }
     ]
 }
