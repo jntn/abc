@@ -1,6 +1,5 @@
 {:nrepl        {:port 3333}
  :source-paths ["src"]
- :local-repo ".m2"
  :dependencies [[rum                         "0.11.3"]
                 [org.roman01la/citrus        "3.2.1"]
                 [secretary                   "1.2.3"]
