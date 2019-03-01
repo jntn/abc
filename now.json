@@ -4,11 +4,8 @@
     "alias": "abc.jntn.se",
     "builds": [
         {
-            "src": "./build.sh",
-            "use": "@now/static-build",
-            "config": {
-                "distDir": "./resources/public"
-            }
+            "src": "shadow-cljs.edn",
+            "use": "@jntn/now-shadow-cljs"
         }
     ]
 }

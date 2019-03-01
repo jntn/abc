@@ -10,3 +10,4 @@ checkouts/
 pom.xml
 yarn-error.log
 resources/public/js
+.m2
