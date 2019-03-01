@@ -67,7 +67,7 @@
         letter-index (:letter-index state)
         entered-char (.toUpperCase (first args))
         current-char (:char letter-info)]
-    (when (= nil (:state state)) ; Do not accept if in transition
+    (when (not= :correct (:state state)) ; Do not accept if in transition
       (if (= entered-char current-char)
         {:timeout {:delay 700 :on-timeout :next-letter}
          :state (assoc state :state :correct)}
