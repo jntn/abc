@@ -9,3 +9,5 @@ checkouts/
 .shadow-cljs
 pom.xml
 yarn-error.log
+.m2
+resources/public/js

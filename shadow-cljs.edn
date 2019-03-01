@@ -23,20 +23,4 @@
         :devtools
         {:after-load abc.core/main
          :http-root  "resources/public"
-         :http-port  3000}}
-
-  :devcards {:target     :browser
-             :output-dir "resources/public/js/devcards"
-             :asset-path "/js/devcards"
-
-             :modules
-             {:main {:entries [abc.devcards]}}
-
-             :devtools {:http-port        4001
-                        :http-root        "resources/public"
-                        :http-handler     shadow.http.push-state/handle
-                        :push-state/index "devcards.html"
-                        ;:before-load     abc.devcards/before-load
-                        ;:preloads        [dev.devcards]
-                        :after-load       abc.devcards/main}
-             :dev {:compiler-options {:devcards true}}}}}
+         :http-port  3000}}}}
